@@ -1,0 +1,90 @@
+xml2flow<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>xml2fow Documentation - simple one pager to sort things out</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="xml2flow-global.css">
+    <link rel="stylesheet" href="xml2flow-doc.css">
+    <link rel="author" href="humans.txt">
+  </head>
+  <body>
+    <div class="doc__bg"></div>
+    <nav class="header">
+      <h1 class="logo">xml2flow <span class="logo__thin">Doc</span></h1>
+      <ul class="menu">
+        <div class="menu__item toggle"><span></span></div>
+        <li class="menu__item"><a href="" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
+        <li class="menu__item"><a href="index.html" class="link link--dark"><i class="fa fa-home"></i> Home</a></li>
+      </ul>
+    </nav>
+    <div class="wrapper">
+      <aside class="doc__nav">
+        <ul>
+          <li class="js-btn selected">Getting Started</li>
+          <li class="js-btn">Execution</li>
+          <li class="js-btn">Issues</li>
+          <li class="js-btn">Developments</li>
+        </ul>
+      </aside>
+      <article class="doc__content">
+          
+          <section class="js-section">
+          <h3 class="section__title">Get Started</h3>
+              <p>First of all, why not make a simple post on how to run the file? This because it is not so easy. After installing xmlstarlet, navigate to your folder containing the XML file and run the following command. Experiment with the file <b>vanilla_swap.xml</b> included in the repo and see the magic!</p>
+          <h3 class="section__title">Execution</h3>
+          <div class="code__block code__block--notabs">
+            <pre class="code code--block">
+              <code>
+                xmlstarlet el -u file_name.xml|awk -F'/' 'BEGIN{print "digraph{"}{print $(NF-1)" -> "$NF}END{print"}"}'|dot -Tpng -o file_name.png
+              </code>
+            </pre>
+          </div>
+        </section>
+          
+          
+        <section class="js-section">
+          <h3 class="section__title">Configuration</h3>
+          <p>Learn how to configure settings for xml2flow.</p>
+          <table id="customers">
+            <tr>
+              <th>Dependency</th>
+              <th>Reason</th>
+              <th>Required</th>
+            </tr>
+            <tr>
+              <td>graphviz</td>
+              <td>Required partially for processing the .dot file.</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>xmlstarlet</td>
+              <td>Required for processing the XML hierarchy of the code.</td>
+              <td>Yes</td>
+            </tr>
+
+          </table>
+          <p>More dependencies might be needed once additional FPML functionalities will be added.</p>
+          <hr />
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">Issues</h3>
+          <p>Please ensure that your xml file has a proper hierarchichal structure, only then can the progarm run and give a proper .png output.</p>
+          <hr />
+        </section>
+        <section class="js-section">
+          <h3 class="section__title">Developments</h3>
+          <p>To ensure that multiple types and shapes of flowcharts be formed, I am working on a reconfiguring an ancient .awk file which will allow users to get desired flowcharts.</p>
+        </section>
+      </article>
+    </div>
+
+    <footer class="footer">xml2flow is an initiative started by Tanishq Chauhan, because he spent an entire day banging his head trying to figure out how to create a flowchart out of 834 lines of xml banking code. If you think this was useful, follow Tanishq <a href="https://github.com/raanaji" target="_blank" class="link link--light">Here</a> and contribute to this project.</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="xml2flow.js"></script>
+  </body>
+</html>
