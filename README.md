@@ -9,7 +9,7 @@ xml2flow is an intitiative I have started to attract more development in the xml
 
 
 ## Website
- [xml2flow website](https://tympanus.net/Freebies/scribbler/)
+ [xml2flow website](https://raanaji.github.io/xml2flow/)
 
 ## Credits
 *   [XMLSarlet](https://www.wikiwand.com/en/XMLStarlet)
